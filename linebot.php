@@ -60,10 +60,10 @@
       $CustomerID = $row['CustomerID'];
     }
     $replyText["text"] = "สวัสดีคุณ $Name $Surname (#$CustomerID)";
-  }
+  }*/
 
   $lineData['URL'] = "https://api.line.me/v2/bot/message/reply";
-  $lineData['AccessToken'] = "(ใส่ Channel AccessToken ของคุณตรงนี้)";
+  $lineData['AccessToken'] = "a1692aa366e2e5fd93d1450329e66440";
 
   $replyJson["replyToken"] = $replyToken;
   $replyJson["messages"][0] = $replyText;
@@ -72,7 +72,7 @@
 
   $results = sendMessage($encodeJson,$lineData);
   echo $results;
-  http_response_code(200);*/
+  http_response_code(200);
 
 // --Credit--
 // Medium: https://medium.com/@sirateek
