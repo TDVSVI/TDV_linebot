@@ -19,6 +19,7 @@
   $userName = "fct";
   $userPassword = "svi2017*";
   $dbName = "TEST";
+  $tableName = "linebot";
   
   $connectionInfo = array("Database"=>$dbName, "UID"=>$userName, "PWD"=>$userPassword, "MultipleActiveResultSets"=>true);
 		
@@ -43,8 +44,8 @@
     return $result;
   }
 
-      $sql = "INSERT INTO $tableName (Plant, Machine, Machine_ID, Mc, IP, Slave_Addr, AAddress, VValue, Start, Stop, Cuser) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-			$params = array($_POST["plant"], $machine, $id, $machineid, $ip, $saddr, $address, $value, $_POST["start"], $_POST["stop"], $_POST["txtUsername1"]);
+      $sql = "INSERT INTO $tableName (UserID, Text, Timestamp) VALUES (?, ?, ?)";
+			$params = array($userID, $text, $timestamp);
 			$stmt = sqlsrv_query( $conn, $sql, $params);
       
   /*$getUser = $mysql->query("SELECT * FROM `Customer` WHERE `UserID`='$userID'");
