@@ -58,6 +58,7 @@
     $replyText["text"] = "สวัสดีคุณ $Name $Surname (#$CustomerID)";
   }*/
 
+  $replyText["type"] = "text";
   $replyText["text"] = "สวัสดีคับบบบ";
   $replyText["text"] = "สวัสดีคุณ ICE"";
 
