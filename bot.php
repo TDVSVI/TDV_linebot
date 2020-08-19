@@ -11,6 +11,10 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 
+  $replyToken = $jsonData["events"][0]["replyToken"];
+  $userID = $jsonData["events"][0]["source"]["userId"];
+  $text2 = $jsonData["events"][0]["message"]["text"];
+  $timestamp = $jsonData["events"][0]["timestamp"];
 
 
 if ( sizeof($request_array['events']) > 0 ) {
@@ -69,7 +73,7 @@ $serverName = "12.1.2.83";
 			}
 
 $sql = "INSERT INTO $tableName (UserID, Text, Timestamp) VALUES (?, ?, ?)";
-			$params = array($text, $text, $text);
+			$params = array($UserID, $text2, $text2);
 			$stmt = sqlsrv_query( $conn, $sql, $params);
 
 ?>
