@@ -44,7 +44,7 @@
 
   $mysql->query("INSERT INTO `linebot`(`UserID`, `Text`, `Timestamp`) VALUES ('$userID','$text','$timestamp')");
 
-  $getUser = $mysql->query("SELECT * FROM `Customer` WHERE `UserID`='$userID'");
+  /*$getUser = $mysql->query("SELECT * FROM `Customer` WHERE `UserID`='$userID'");
   $getuserNum = $getUser->num_rows;
   $replyText["type"] = "text";
   if ($getuserNum == "0"){
@@ -56,7 +56,10 @@
       $CustomerID = $row['CustomerID'];
     }
     $replyText["text"] = "สวัสดีคุณ $Name $Surname (#$CustomerID)";
-  }
+  }*/
+
+  $replyText["text"] = "สวัสดีคับบบบ";
+  $replyText["text"] = "สวัสดีคุณ ICE"";
 
   $lineData['URL'] = "https://api.line.me/v2/bot/message/reply";
   $lineData['AccessToken'] = "XmBhQb6jkujM8xtFKzaBZJq6+ZpyY296LITq5PaLd2j5w/eZCFulZae8Cdf/z11CGTFPZeK1ODhUCJ9NC76WpOAgtnslzplXTlI1XePyNwA99Q38tGSsp8HKxBmFnkDF5Zw8VpmKy9Im1JJE6bYKewdB04t89/1O/w1cDnyilFU=';
