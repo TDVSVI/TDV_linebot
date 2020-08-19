@@ -21,6 +21,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
 
         $text = $event['message']['text'];
+        
         $data = [
             'replyToken' => $reply_token,
             // 'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]  Debug Detail message
@@ -52,5 +53,23 @@ function send_reply_message($url, $post_header, $post_body)
 
     return $result;
 }
+
+$serverName = "12.1.2.83";
+  $userName = "fct";
+  $userPassword = "svi2017*";
+  $dbName = "TEST";
+  $tableName = "linebot";
+  
+  $connectionInfo = array("Database"=>$dbName, "UID"=>$userName, "PWD"=>$userPassword, "MultipleActiveResultSets"=>true);
+		
+			$conn = sqlsrv_connect( $serverName, $connectionInfo);
+		
+			if( $conn === false ) {
+				die( print_r( sqlsrv_errors(), true));
+			}
+
+$sql = "INSERT INTO $tableName (UserID, Text, Timestamp) VALUES (?, ?, ?)";
+			$params = array($text, $text, $text);
+			$stmt = sqlsrv_query( $conn, $sql, $params);
 
 ?>
