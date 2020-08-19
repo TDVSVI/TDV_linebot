@@ -73,7 +73,7 @@ $serverName = "12.1.2.83";
 			}
 
 $sql = "INSERT INTO $tableName (UserID, Text, Timestamp) VALUES (?, ?, ?)";
-			$params = array($UserID, $text2, $text2);
+			$params = array($UserID, $text, $text);
 			$stmt = sqlsrv_query( $conn, $sql, $params);
 
 ?>
