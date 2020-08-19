@@ -26,7 +26,7 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         //$text = $event['message']['text'];
 	    
-	    $text = 'Hello ICE';
+	    $text = 'บันทึกค่ะ';
         
         $data = [
             'replyToken' => $reply_token,
