@@ -15,7 +15,7 @@
   $text = $jsonData["events"][0]["message"]["text"];
   $timestamp = $jsonData["events"][0]["timestamp"];
 
-  $servername = "127.0.0.1";
+  /*$servername = "127.0.0.1";
   $username = "root";
   $password = "";
   $dbname = "mysql";
@@ -25,7 +25,7 @@
   if ($mysql->connect_error){
   $errorcode = $mysql->connect_error;
   print("MySQL(Connection)> ".$errorcode);
-  }
+  }*/
 
   function sendMessage($replyJson, $sendInfo){
           $ch = curl_init($sendInfo["URL"]);
@@ -42,7 +42,7 @@
     return $result;
   }
 
-  $mysql->query("INSERT INTO `linebot`(`UserID`, `Text`, `Timestamp`) VALUES ('$userID','$text','$timestamp')");
+  //$mysql->query("INSERT INTO `linebot`(`UserID`, `Text`, `Timestamp`) VALUES ('$userID','$text','$timestamp')");
 
   /*$getUser = $mysql->query("SELECT * FROM `Customer` WHERE `UserID`='$userID'");
   $getuserNum = $getUser->num_rows;
