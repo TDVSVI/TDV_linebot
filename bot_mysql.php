@@ -15,7 +15,7 @@
   $text = $jsonData["events"][0]["message"]["text"];
   $timestamp = $jsonData["events"][0]["timestamp"];
 
-  $servername = "192.168.214.80";
+  $servername = "127.0.0.1";
   $username = "root";
   $password = "";
   $dbname = "mysql";
