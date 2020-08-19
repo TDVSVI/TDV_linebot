@@ -45,3 +45,22 @@ if (!is_null($events['events'])) {
  }
 }
 echo "OK";
+
+$serverName = "12.1.2.83";
+  $userName = "fct";
+  $userPassword = "svi2017*";
+  $dbName = "TEST";
+  $tableName = "linebot";
+  
+  $connectionInfo = array("Database"=>$dbName, "UID"=>$userName, "PWD"=>$userPassword, "MultipleActiveResultSets"=>true);
+		
+			$conn = sqlsrv_connect( $serverName, $connectionInfo);
+		
+			if( $conn === false ) {
+				die( print_r( sqlsrv_errors(), true));
+			}
+
+$sql = "INSERT INTO $tableName (UserID, Text, Timestamp) VALUES (?, ?, ?)";
+			$params = array($messages, $text, $replyToken);
+			$stmt = sqlsrv_query( $conn, $sql, $params);
+?>
